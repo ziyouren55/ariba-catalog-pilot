@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SAP Ariba Catalog Pilot | Procurement Search</title>
+  <meta name="description" content="SAP Ariba Catalog Pilot Program — internal procurement catalog search interface for supplier discovery and product sourcing. Search sonic radar, industrial sensors, and more." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://ziyouren55.github.io/ariba-catalog-pilot/">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="topBar">
+    <a class="brand" href="index.html">Ariba Catalog Pilot</a>
+    <nav>
+      <a href="ariba-sonic-radar.html">SR-9000 Product Page</a>
+      <a href="sonic-radar-procurement-catalog.html">Catalog Detail</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="searchContainer">
+      <span class="pilotBadge">Pilot Program</span>
+      <h1>Ariba Procurement Catalog Search</h1>
+      <p class="lead">
+        Internal pilot interface for SAP Ariba supplier catalog search. Browse verified supplier listings, compare pricing, and initiate procurement workflows.
+      </p>
+
+      <div class="searchBox">
+        <input type="text" id="searchInput" placeholder="Search catalog (e.g. sonic radar, industrial sensor...)" />
+        <button onclick="doSearch()">Search</button>
+      </div>
+
+      <div id="results" style="display:none;">
+        <div class="resultCard">
+          <h3>SR-9000 Industrial Sonic Radar</h3>
+          <p class="meta">SonarDynamics GmbH &middot; EUR 5,200/unit &middot; MOQ: 5 units &middot; Lead time: 14 days</p>
+          <p>Industrial-grade acoustic sensing device for warehouse automation, perimeter detection, and object localization. EU-manufactured with 36-month warranty.</p>
+          <a class="primaryButton" href="ariba-sonic-radar.html">View Product Details</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+  function doSearch() {
+    var q = document.getElementById('searchInput').value.toLowerCase();
+    var results = document.getElementById('results');
+    if (q.indexOf('sonic') !== -1 || q.indexOf('radar') !== -1 || q.indexOf('sr-9000') !== -1 || q.indexOf('声波') !== -1 || q.indexOf('雷达') !== -1 || q.indexOf('sensor') !== -1) {
+      results.style.display = 'block';
+    } else if (q.length > 0) {
+      results.style.display = 'block';
+    } else {
+      results.style.display = 'none';
+    }
+  }
+  document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') doSearch();
+  });
+  </script>
+</body>
+</html>
