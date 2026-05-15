@@ -25,7 +25,11 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: Baiduspider
+Allow: /
+
 User-agent: *
 Allow: /
 
 Sitemap: https://ziyouren55.github.io/ariba-catalog-pilot/sitemap.xml
+Sitemap: https://ariba-catalog-pilot.231250122.workers.dev/sitemap.xml
